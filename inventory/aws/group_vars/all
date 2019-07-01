@@ -35,7 +35,7 @@ nodes:
     root_volume:
       ebs: true                                                    # non-EBS root volumes are not supported at the moment
       type: gp2
-      size: 25
+      size: 50
 
   - host_group: "hdp-slave"
     count: 3
@@ -48,7 +48,7 @@ nodes:
     root_volume:
       ebs: true                                                    # non-EBS root volumes are not supported at the moment
       type: gp2
-      size: 25
+      size: 50
 
   - host_group: "hdp-edge"
     count: 0

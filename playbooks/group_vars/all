@@ -206,6 +206,7 @@ blueprint_dynamic:                                        # properties for the d
     services:
       - DATANODE
       - NODEMANAGER
+      - KAFKA_BROKER
       - METRICS_MONITOR
       - HST_AGENT
 
