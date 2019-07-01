@@ -194,6 +194,7 @@ blueprint_dynamic:                                        # properties for the d
       - KNOX_GATEWAY
       - AMBARI_SERVER
       - INFRA_SOLR
+      - NIFI_REGISTRY_MASTER
       - METRICS_COLLECTOR
       - METRICS_GRAFANA
       - METRICS_MONITOR
@@ -207,6 +208,7 @@ blueprint_dynamic:                                        # properties for the d
       - DATANODE
       - NODEMANAGER
       - KAFKA_BROKER
+      - NIFI_MASTER
       - METRICS_MONITOR
       - HST_AGENT
 
