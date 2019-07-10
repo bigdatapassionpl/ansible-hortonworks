@@ -177,8 +177,9 @@ blueprint_name: '{{ cluster_name }}_blueprint'            # the name of the blue
 blueprint_file: 'blueprint_dynamic.j2'                    # the blueprint JSON file - 'blueprint_dynamic.j2' is a Jinja2 template that generates the required JSON
 blueprint_dynamic:                                        # properties for the dynamic blueprint - these are only used by the 'blueprint_dynamic.j2' template to generate the JSON
   - host_group: "hdp-master"
-    clients: ['ZOOKEEPER_CLIENT', 'HDFS_CLIENT', 'YARN_CLIENT', 'MAPREDUCE2_CLIENT', 'TEZ_CLIENT', 'PIG', 'SQOOP', 'HIVE_CLIENT', 'OOZIE_CLIENT', 'INFRA_SOLR_CLIENT', 'SPARK2_CLIENT']
+    clients: ['ZOOKEEPER_CLIENT', 'HDFS_CLIENT', 'YARN_CLIENT', 'MAPREDUCE2_CLIENT', 'TEZ_CLIENT', 'PIG', 'SQOOP', 'HIVE_CLIENT', 'OOZIE_CLIENT', 'INFRA_SOLR_CLIENT', 'SPARK2_CLIENT', 'HBASE_CLIENT']
     services:
+      - AMBARI_SERVER
       - ZOOKEEPER_SERVER
       - NAMENODE
       - SECONDARY_NAMENODE
@@ -187,12 +188,12 @@ blueprint_dynamic:                                        # properties for the d
       - YARN_REGISTRY_DNS
       - TIMELINE_READER
       - HISTORYSERVER
+      - HBASE_MASTER
       - SPARK2_JOBHISTORYSERVER
       - HIVE_SERVER
       - HIVE_METASTORE
       - OOZIE_SERVER
       - KNOX_GATEWAY
-      - AMBARI_SERVER
       - INFRA_SOLR
       - NIFI_REGISTRY_MASTER
       - METRICS_COLLECTOR
@@ -203,10 +204,11 @@ blueprint_dynamic:                                        # properties for the d
       - ACTIVITY_EXPLORER
       - HST_AGENT
   - host_group: "hdp-slave"
-    clients: ['ZOOKEEPER_CLIENT', 'HDFS_CLIENT', 'YARN_CLIENT', 'MAPREDUCE2_CLIENT', 'TEZ_CLIENT', 'PIG', 'SQOOP', 'HIVE_CLIENT', 'OOZIE_CLIENT', 'INFRA_SOLR_CLIENT', 'SPARK2_CLIENT']
+    clients: ['ZOOKEEPER_CLIENT', 'HDFS_CLIENT', 'YARN_CLIENT', 'MAPREDUCE2_CLIENT', 'TEZ_CLIENT', 'PIG', 'SQOOP', 'HIVE_CLIENT', 'OOZIE_CLIENT', 'INFRA_SOLR_CLIENT', 'SPARK2_CLIENT', 'HBASE_CLIENT']
     services:
       - DATANODE
       - NODEMANAGER
+      - HBASE_REGIONSERVER
       - KAFKA_BROKER
       - NIFI_MASTER
       - METRICS_MONITOR
