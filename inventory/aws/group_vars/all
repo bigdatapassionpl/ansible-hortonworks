@@ -55,7 +55,7 @@ nodes:
     image: ami-0773391ae604c49a4                                   # Ubuntu 16.04 AMI in eu-west-1 only (change this ID if using a different region)
     type: m4.large
     spot: true
-    spot_price: "0.05"
+    spot_price: "0.1"
     public_ip: true
     security_groups: default_cluster_access
     root_volume:
