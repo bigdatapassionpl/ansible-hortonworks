@@ -187,9 +187,10 @@ blueprint_dynamic:                                        # properties for the d
       - YARN_REGISTRY_DNS
       - TIMELINE_READER
       - HISTORYSERVER
-      - SPARK2_JOBHISTORYSERVER
       - HIVE_SERVER
       - HIVE_METASTORE
+      - SPARK2_JOBHISTORYSERVER
+      - ZEPPELIN_MASTER
       - AMBARI_SERVER
       - INFRA_SOLR
       - METRICS_COLLECTOR
