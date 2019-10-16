@@ -28,7 +28,7 @@ nodes:
     count: 1
     image: ami-0773391ae604c49a4                                   # Ubuntu 16.04 AMI in eu-west-1 only (change this ID if using a different region)
     type: r4.xlarge
-    spot: true
+    spot: false
     spot_price: "0.3"
     public_ip: true
     security_groups: default_cluster_access,ambari_access
@@ -38,10 +38,10 @@ nodes:
       size: 100
 
   - host_group: "hdp-slave"
-    count: 3
+    count: 6
     image: ami-0773391ae604c49a4                                   # Ubuntu 16.04 AMI in eu-west-1 only (change this ID if using a different region)
     type: m5.xlarge
-    spot: true
+    spot: false
     spot_price: "0.2"
     public_ip: true
     security_groups: default_cluster_access
