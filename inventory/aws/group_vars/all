@@ -28,8 +28,8 @@ nodes:
     count: 1
     image: ami-0773391ae604c49a4                                   # Ubuntu 16.04 AMI in eu-west-1 only (change this ID if using a different region)
     type: r4.xlarge
-    spot: true
-    spot_price: "0.1"
+    spot: false
+    spot_price: "0.4"
     public_ip: true
     security_groups: default_cluster_access,ambari_access
     root_volume:
@@ -41,8 +41,8 @@ nodes:
     count: 1
     image: ami-0773391ae604c49a4                                   # Ubuntu 16.04 AMI in eu-west-1 only (change this ID if using a different region)
     type: r4.xlarge
-    spot: true
-    spot_price: "0.1"
+    spot: false
+    spot_price: "0.4"
     public_ip: true
     security_groups: default_cluster_access,ambari_access
     root_volume:
@@ -54,8 +54,8 @@ nodes:
     count: 1
     image: ami-0773391ae604c49a4                                   # Ubuntu 16.04 AMI in eu-west-1 only (change this ID if using a different region)
     type: r4.xlarge
-    spot: true
-    spot_price: "0.1"
+    spot: false
+    spot_price: "0.4"
     public_ip: true
     security_groups: default_cluster_access,ambari_access
     root_volume:
@@ -68,7 +68,7 @@ nodes:
     image: ami-0773391ae604c49a4                                   # Ubuntu 16.04 AMI in eu-west-1 only (change this ID if using a different region)
     type: m5.xlarge
     spot: true
-    spot_price: "0.1"
+    spot_price: "0.3"
     public_ip: true
     security_groups: default_cluster_access
     root_volume:
@@ -77,11 +77,11 @@ nodes:
       size: 50
 
   - host_group: "hdp-stream"
-    count: 2
+    count: 3
     image: ami-0773391ae604c49a4                                   # Ubuntu 16.04 AMI in eu-west-1 only (change this ID if using a different region)
     type: m5.xlarge
     spot: true
-    spot_price: "0.1"
+    spot_price: "0.3"
     public_ip: true
     security_groups: default_cluster_access
     root_volume:
