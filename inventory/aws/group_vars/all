@@ -24,38 +24,77 @@ cloud_config:
       description: "SSH and inter-nodes access - {{ cluster_name }}"
 
 nodes:
-  - host_group: "hdp-master"
+  - host_group: "hdp-masternode-01"
     count: 1
     image: ami-0773391ae604c49a4                                   # Ubuntu 16.04 AMI in eu-west-1 only (change this ID if using a different region)
     type: r4.xlarge
-    spot: false
-    spot_price: "0.3"
+    spot: true
+    spot_price: "0.1"
     public_ip: true
     security_groups: default_cluster_access,ambari_access
     root_volume:
       ebs: true                                                    # non-EBS root volumes are not supported at the moment
       type: gp2
-      size: 100
+      size: 50
 
-  - host_group: "hdp-slave"
-    count: 6
+  - host_group: "hdp-masternode-02"
+    count: 1
+    image: ami-0773391ae604c49a4                                   # Ubuntu 16.04 AMI in eu-west-1 only (change this ID if using a different region)
+    type: r4.xlarge
+    spot: true
+    spot_price: "0.1"
+    public_ip: true
+    security_groups: default_cluster_access,ambari_access
+    root_volume:
+      ebs: true                                                    # non-EBS root volumes are not supported at the moment
+      type: gp2
+      size: 50
+
+  - host_group: "hdp-management"
+    count: 1
+    image: ami-0773391ae604c49a4                                   # Ubuntu 16.04 AMI in eu-west-1 only (change this ID if using a different region)
+    type: r4.xlarge
+    spot: true
+    spot_price: "0.1"
+    public_ip: true
+    security_groups: default_cluster_access,ambari_access
+    root_volume:
+      ebs: true                                                    # non-EBS root volumes are not supported at the moment
+      type: gp2
+      size: 50
+
+  - host_group: "hdp-worker"
+    count: 2
     image: ami-0773391ae604c49a4                                   # Ubuntu 16.04 AMI in eu-west-1 only (change this ID if using a different region)
     type: m5.xlarge
-    spot: false
-    spot_price: "0.2"
+    spot: true
+    spot_price: "0.1"
     public_ip: true
     security_groups: default_cluster_access
     root_volume:
       ebs: true                                                    # non-EBS root volumes are not supported at the moment
       type: gp2
-      size: 100
+      size: 50
+
+  - host_group: "hdp-stream"
+    count: 2
+    image: ami-0773391ae604c49a4                                   # Ubuntu 16.04 AMI in eu-west-1 only (change this ID if using a different region)
+    type: m5.xlarge
+    spot: true
+    spot_price: "0.1"
+    public_ip: true
+    security_groups: default_cluster_access
+    root_volume:
+      ebs: true                                                    # non-EBS root volumes are not supported at the moment
+      type: gp2
+      size: 50
 
   - host_group: "hdp-edge"
     count: 0
     image: ami-0773391ae604c49a4                                   # Ubuntu 16.04 AMI in eu-west-1 only (change this ID if using a different region)
     type: m4.large
     spot: true
-    spot_price: "0.1"
+    spot_price: "0.05"
     public_ip: true
     security_groups: default_cluster_access
     root_volume:
